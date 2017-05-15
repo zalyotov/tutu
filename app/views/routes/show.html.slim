@@ -1,0 +1,9 @@
+p#notice
+  = notice
+p
+  strong
+    | Название:
+  = @route.title
+= link_to 'Редактировать', edit_route_path(@route)
+|  | 
+= link_to 'Назад', routes_path
