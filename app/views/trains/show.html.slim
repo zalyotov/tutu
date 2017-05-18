@@ -1,9 +1,19 @@
 p#notice
   = notice
+  
 p
   strong
-    | Номер:
+    | Поезд номер:
   = @train.number
+
+p
+  strong
+    | Маршрут: 
+  - if @train.route.present?
+    =@train.route.title
+  - else
+    | Маршрут не назначен
+
 = link_to 'Редактировать', edit_train_path(@train)
 |  | 
 = link_to 'Назад', trains_path

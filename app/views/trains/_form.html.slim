@@ -11,5 +11,10 @@
   .field
     = form.label :number
     = form.text_field :number, id: :train_number
+
+  .field
+    = form.label :route
+    = form.collection_select :route_id, Route.all, :id, :title, {:prompt => 'Выберите маршрут'}
+
   .actions
     = form.submit
