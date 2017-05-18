@@ -14,10 +14,10 @@ table
         td
           = route.title
         td
-          = link_to 'Show', route
+          = link_to 'Показать', route
         td
-          = link_to 'Edit', edit_route_path(route)
+          = link_to 'Редактировать', edit_route_path(route)
         td
-          = link_to 'Destroy', route, method: :delete, data: { confirm: 'Вы уверены?' }
+          = link_to 'Удалить', route, method: :delete, data: { confirm: 'Вы уверены?' }
 br
 = link_to 'Создать маршрут', new_route_path

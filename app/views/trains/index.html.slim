@@ -1,7 +1,7 @@
 p#notice
   = notice
 h1
-  | Trains
+  | Поезда
 table
   thead
     tr
@@ -14,10 +14,10 @@ table
         td
           = train.number
         td
-          = link_to 'Show', train
+          = link_to 'Подробно', train
         td
-          = link_to 'Edit', edit_train_path(train)
+          = link_to 'Редактировать', edit_train_path(train)
         td
-          = link_to 'Destroy', train, method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to 'Удалить', train, method: :delete, data: { confirm: 'Are you sure?' }
 br
-= link_to 'New Train', new_train_path
+= link_to 'Создать поезд', new_train_path
