@@ -1,0 +1,27 @@
+= form_with(model: wagon, local: true) do |form|
+  - if wagon.errors.any?
+    #error_explanation
+      h2
+        = pluralize(wagon.errors.count, "error")
+        |  prohibited this wagon from being saved:
+      ul
+        - wagon.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = form.label :train
+    = form.collection_select :train_id, Train.all, :id, :number, {:prompt => 'Выберите поезд'}
+
+  .field
+    = form.label :wagon_type
+    = form.select :wagon_type, Wagon::TYPE.invert, {:prompt => 'Выберите тип вагона'}
+
+  .field
+    = form.label :up_places
+    = form.text_field :up_places
+  .field
+    = form.label :down_places
+    = form.text_field :down_places
+
+  .actions
+    = form.submit

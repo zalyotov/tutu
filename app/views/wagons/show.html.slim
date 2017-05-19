@@ -1,0 +1,23 @@
+p#notice
+  = notice
+  
+p
+  strong
+    | Поезд номер: 
+  = Wagon::TYPE[@wagon.wagon_type.to_sym]
+
+p
+  strong
+    | Количество мест:
+  br 
+  span
+    | верхних 
+    = @wagon.up_places
+  br
+  span
+    | нижних 
+    = @wagon.down_places
+
+= link_to 'Редактировать', edit_wagon_path(@wagon)
+|  | 
+= link_to 'Назад', wagons_path
