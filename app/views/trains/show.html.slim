@@ -5,6 +5,65 @@ p
   strong
     | Поезд номер:
   = @train.number
+  
+p
+  strong
+    | Купейных вагонов: 
+  = @train.wagons_by_type(:compartment).count
+  
+p
+  strong
+    | Плацкартных вагонов: 
+  = @train.wagons_by_type(:econom).count
+
+p
+  strong
+    | Общее количество плацкартных мест: 
+  br
+  span
+    | Верхних:  
+    = @train.places_by_type(:econom, :up_places)
+  br
+  span
+    | Нижних:  
+    = @train.places_by_type(:econom, :down_places)
+
+p
+  strong
+    | Общее количество купейных мест: 
+  br
+  span
+    | Верхних:  
+    = @train.places_by_type(:compartment, :up_places)
+  br
+  span
+    | Нижних:  
+    = @train.places_by_type(:compartment, :down_places)
+
+br
+p
+  strong
+    | Детализация вагонов: 
+table
+  th
+    | #
+  th
+    | Тип вагона
+  th
+    | Верхних мест
+  th
+    | Нижних мест
+  - if @train.wagons.present?
+    - @train.wagons.each_with_index do |wagon, index|
+      tr
+        td
+          = index
+        td
+          = Wagon::TYPE[wagon.wagon_type.to_sym]
+        td
+          = wagon.up_places
+        td
+          = wagon.down_places
 
 p
   strong
@@ -13,6 +72,8 @@ p
     =@train.route.title
   - else
     | Маршрут не назначен
+
+
 
 = link_to 'Редактировать', edit_train_path(@train)
 |  | 
