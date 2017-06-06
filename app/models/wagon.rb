@@ -2,6 +2,7 @@ class Wagon < ApplicationRecord
   TYPE = { SeatWagon: 'Сидячий', SleepWagon: 'Спальный', EconomWagon: 'Плацкартный', CoupeWagon: 'Купейный' }.freeze
 
   belongs_to :train
+  validates :number, uniquess: { scope: :train_id }
 
   before_save :set_number
 
