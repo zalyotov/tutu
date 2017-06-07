@@ -2,14 +2,15 @@ class Wagon < ApplicationRecord
   TYPE = { SeatWagon: 'Сидячий', SleepWagon: 'Спальный', EconomWagon: 'Плацкартный', CoupeWagon: 'Купейный' }.freeze
 
   belongs_to :train
-  validates :number, uniquess: { scope: :train_id }
+  validates :number, uniqueness: { scope: :train_id }
 
   before_save :set_number
 
-  scope :coupe, -> { where(type: CoupeWagon) }
-  scope :econom, -> { where(type: EconomWagon) }
-  scope :seat, -> { where(type: SeatWagon) }
-  scope :sleep, -> { where(type: SleepWagon) }
+  scope :sorted, -> (arg) { arg ? order(number: :desc) : order(number: :asc)  }
+  scope :coupe, -> { where(type: :CoupeWagon) }
+  scope :econom, -> { where(type: :EconomWagon) }
+  scope :seat, -> { where(type: :SeatWagon) }
+  scope :sleep, -> { where(type: :SleepWagon) }
 
   private
 

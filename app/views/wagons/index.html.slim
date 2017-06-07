@@ -5,7 +5,7 @@ h1
 table
   tbody
     - if @wagons.present?
-      = render @wagons
+      = render partial: 'wagons/wagon', collection: @wagons
     - else
       | Вагонов нет
       

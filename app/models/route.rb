@@ -4,4 +4,19 @@ class Route < ApplicationRecord
   has_many :trains
 
   validates :title, presence: true
+  validate :station_count
+
+  before_validation :set_name
+
+  private
+
+  def station_count
+    if railway_stations.size < 2
+      errors.add(:base, "В маршруте должно быть минимум 2 станции")
+    end
+  end
+
+  def set_name
+    self.title = "#{railway_stations.first.title} - #{railway_stations.last.title}"
+  end
 end

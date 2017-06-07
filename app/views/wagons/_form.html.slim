@@ -1,4 +1,4 @@
-= form_with(model: wagon, local: true) do |form|
+= form_for(@wagon.becomes(Wagon)) do |form|
   - if wagon.errors.any?
     #error_explanation
       h2
@@ -9,19 +9,36 @@
           li
             = message
   .field
-    = form.label :train
+    = form.label :train, "Поезд"
     = form.collection_select :train_id, Train.all, :id, :number, {:prompt => 'Выберите поезд'}
 
   .field
-    = form.label :wagon_type
-    = form.select :wagon_type, Wagon::TYPE.invert, {:prompt => 'Выберите тип вагона'}
+    = form.label :type, "Тип вагона"
+    = form.select :type, Wagon::TYPE.invert, {:prompt => 'Выберите тип вагона'}
 
   .field
-    = form.label :up_places
+    = form.label :up_places, "Верхние места"
     = form.text_field :up_places
+
   .field
-    = form.label :down_places
+    = form.label :down_places, "Нижние места"
     = form.text_field :down_places
+
+  .field
+    = form.label :side_up_places, "Верхние боковые места"
+    = form.text_field :side_up_places
+
+  .field
+    = form.label :side_down_places, "Нижние боковые места"
+    = form.text_field :side_down_places
+
+  .field
+    = form.label :places, "Спальные места"
+    = form.text_field :places
+
+  .field
+    = form.label :seat_places, "Сидячие места"
+    = form.text_field :seat_places
 
   .actions
     = form.submit

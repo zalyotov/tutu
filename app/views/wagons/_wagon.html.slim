@@ -1,9 +1,9 @@
 tr
   td
-    = Wagon::TYPE[wagon.wagon_type.to_sym]
+    = Wagon::TYPE[wagon.type.to_sym]
   td
-    = link_to 'Подробно', wagon
+    = link_to 'Подробно', wagon_path(wagon)
   td
     = link_to 'Редактировать', edit_wagon_path(wagon)
   td
-    = link_to 'Удалить', wagon, method: :delete, data: { confirm: 'Are you sure?' }
+    = link_to 'Удалить', wagon_path(wagon), method: :delete, data: { confirm: 'Are you sure?' }
