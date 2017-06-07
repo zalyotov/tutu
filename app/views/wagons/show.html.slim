@@ -3,20 +3,17 @@ p#notice
   
 p
   strong
-    | Поезд номер: 
-  = Wagon::TYPE[@wagon.wagon_type.to_sym]
-
+    | Вагон # 
+  =@wagon.number
 p
   strong
-    | Количество мест:
-  br 
-  span
-    | верхних 
-    = @wagon.up_places
-  br
-  span
-    | нижних 
-    = @wagon.down_places
+    | Тип: 
+  = Wagon::TYPE[@wagon.type.to_sym]
+
+= render @wagon.type.underscore
+
+br
+br
 
 = link_to 'Редактировать', edit_wagon_path(@wagon)
 |  | 

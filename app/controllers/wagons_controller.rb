@@ -20,7 +20,7 @@ class WagonsController < ApplicationController
 
     respond_to do |format|
       if @wagon.save
-        format.html { redirect_to @wagon, notice: 'Wagon was successfully created.' }
+        format.html { redirect_to wagon_path(@wagon), notice: 'Wagon was successfully created.' }
       else
         format.html { render :new }
       end
@@ -30,7 +30,7 @@ class WagonsController < ApplicationController
   def update
     respond_to do |format|
       if @wagon.update(wagon_params)
-        format.html { redirect_to @wagon, notice: 'Wagon was successfully updated.' }
+        format.html { redirect_to wagon_path(@wagon), notice: 'Wagon was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -50,6 +50,6 @@ class WagonsController < ApplicationController
     end
 
     def wagon_params
-      params.require(:wagon).permit(:wagon_type, :up_places, :down_places, :train_id)
+      params.require(:wagon).permit(:type, :number, :up_places, :down_places, :side_up_places, :side_down_places, :seat_places, :places, :train_id)
     end
 end

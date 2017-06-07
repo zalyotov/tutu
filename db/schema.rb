@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170519131459) do
+ActiveRecord::Schema.define(version: 20170607085520) do
 
   create_table "railway_stations", force: :cascade do |t|
     t.string "title"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20170519131459) do
   create_table "railway_stations_routes", force: :cascade do |t|
     t.integer "railway_station_id"
     t.integer "route_id"
+    t.integer "sort"
   end
 
   create_table "routes", force: :cascade do |t|
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(version: 20170519131459) do
     t.datetime "updated_at", null: false
     t.integer "current_station_id"
     t.integer "route_id"
+    t.boolean "wagons_sort"
     t.index ["current_station_id"], name: "index_trains_on_current_station_id"
     t.index ["route_id"], name: "index_trains_on_route_id"
   end
@@ -65,10 +67,15 @@ ActiveRecord::Schema.define(version: 20170519131459) do
   create_table "wagons", force: :cascade do |t|
     t.integer "up_places"
     t.integer "down_places"
-    t.string "wagon_type"
     t.integer "train_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "type"
+    t.integer "places"
+    t.integer "seat_places"
+    t.integer "side_up_places"
+    t.integer "side_down_places"
+    t.integer "number"
     t.index ["train_id"], name: "index_wagons_on_train_id"
   end
 

@@ -10,11 +10,11 @@ class Train < ApplicationRecord
   validates :number, presence: true
 
   def wagons_by_type(wagon_type)
-    wagons.where(wagon_type: wagon_type)
+    wagons.where(type: wagon_type)
   end
 
   def places_by_type(wagon_type, place_type)
-    wagons_by_type(wagon_type).pluck(place_type).inject(:+)
+    wagons.where(type: wagon_type).sum(place_type)
   end
 
 end
