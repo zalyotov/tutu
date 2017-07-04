@@ -16,6 +16,8 @@ p
             | Название
           td
             | Позиция
+          td
+            | Прибытие/Отправление
 
       - @route.railway_stations.ordered.each do |station|
         tr
@@ -26,6 +28,14 @@ p
               =number_field_tag :position, station.position_in(@route)
               =hidden_field_tag :route_id, @route.id
               =submit_tag "Изменить"
+          td
+            =form_tag update_time_railway_station_path(station), method: :patch do
+              =hidden_field_tag :route_id, @route.id
+              =time_field_tag :arrival_time, station.arrival_time_in(@route)
+              | /
+              =time_field_tag :departure_time, station.departure_time_in(@route)
+              =submit_tag "Изменить время"
+
   - else
     | Станций в маршруте нет
 

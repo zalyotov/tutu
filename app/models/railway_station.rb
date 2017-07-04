@@ -18,6 +18,21 @@ class RailwayStation < ApplicationRecord
     station_route(route).try(:position)
   end
 
+  def arrival_time_in(route)
+    arrival_time = station_route(route).try(:arrival_time)
+    arrival_time.strftime('%H:%M') unless arrival_time.nil?
+  end
+
+  def departure_time_in(route)
+    departure_time = station_route(route).try(:departure_time)
+    departure_time.strftime('%H:%M') unless departure_time.nil?
+  end
+
+  def update_time(route,  time)
+    station_route = station_route(route)
+    station_route.update(time) if station_route
+  end
+
   protected
 
   def station_route(route)

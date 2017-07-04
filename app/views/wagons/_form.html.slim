@@ -8,9 +8,6 @@
         - wagon.errors.full_messages.each do |message|
           li
             = message
-  .field
-    = form.label :train, "Поезд"
-    = form.collection_select :train_id, Train.all, :id, :number, {:prompt => 'Выберите поезд'}
 
   .field
     = form.label :type, "Тип вагона"
