@@ -32,6 +32,9 @@ p
   strong
     | Сидячих вагонов: 
   = @train.wagons.seat.count
+
+p
+  =link_to "Создать вагон", new_train_wagon_path(@train)
   
 br
 h2

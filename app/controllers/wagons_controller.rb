@@ -1,5 +1,6 @@
 class WagonsController < ApplicationController
   before_action :set_wagon, only: [:show, :edit, :update, :destroy]
+  before_action :set_train, only: [:index, :new, :create]
 
   def index
     @wagons = Wagon.all
@@ -16,11 +17,11 @@ class WagonsController < ApplicationController
   end
 
   def create
-    @wagon = Wagon.new(wagon_params)
+    @wagon = @train.wagons.new(wagon_params)
 
     respond_to do |format|
       if @wagon.save
-        format.html { redirect_to wagon_path(@wagon), notice: 'Wagon was successfully created.' }
+        format.html { redirect_to @train, notice: 'Wagon was successfully created.' }
       else
         format.html { render :new }
       end
@@ -45,6 +46,9 @@ class WagonsController < ApplicationController
   end
 
   private
+    def set_train
+      @train = Train.find(params[:train_id])
+    end
     def set_wagon
       @wagon = Wagon.find(params[:id])
     end
