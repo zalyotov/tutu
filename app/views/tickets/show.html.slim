@@ -1,0 +1,24 @@
+p#notice
+  = notice
+h1
+  | Билет
+table
+  thead
+    tr
+      td Поезд
+      td ФИО
+      td Данные паспорта
+      td Станция отправления
+      td Станция прибытия
+  tbody
+  tr
+    td = @ticket.train.number
+    td = @ticket.owner_name
+    td = @ticket.passport_number
+    td = @ticket.first_station.title
+    td = @ticket.last_station.title
+br
+
+= link_to 'Редактировать', edit_ticket_path(@ticket)
+|  | 
+= link_to 'Назад', tickets_path
