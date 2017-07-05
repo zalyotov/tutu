@@ -9,6 +9,8 @@ class Train < ApplicationRecord
 
   validates :number, presence: true
 
+  scope :train_route_station, ->(station) { joins(route: :railway_stations).where('railway_station_id = ?', station)}
+  
   def wagons_by_type(wagon_type)
     wagons.where(type: wagon_type)
   end

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :tickets
   resources :users
 
-  resource :search, only: [:new, :show, :edit]
+  resource :search, only: [:new, :show, :edit, :create]
 
   get 'welcome/index'
   root 'welcome#index'
