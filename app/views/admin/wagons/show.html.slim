@@ -1,0 +1,20 @@
+p#notice
+  = notice
+  
+p
+  strong
+    | Вагон # 
+  =@wagon.number
+p
+  strong
+    | Тип: 
+  = Wagon::TYPE[@wagon.type.to_sym]
+
+= render @wagon.type.underscore
+
+br
+br
+
+= link_to 'Редактировать', edit_admin_wagon_path(@wagon)
+|  | 
+= link_to 'Назад', [:admin, @wagon.train]

@@ -1,0 +1,43 @@
+
+h1 Билеты
+
+table
+  thead
+    tr
+      th
+        | Пользователь
+      th
+        | Поезд
+      th
+        | ФИО
+      th
+        | Станция отправления
+      th
+        | Станция прибытия
+      th
+      th
+      th
+
+  tbody
+    - @tickets.each do |ticket|
+      tr
+        td
+          = ticket.user.email
+        td
+          = ticket.train.number
+        td
+          = ticket.owner_name
+        td
+          = ticket.first_station.title
+        td
+          = ticket.last_station.title
+        td
+          = link_to t('common.show'), admin_ticket_path(ticket)
+        td
+          = link_to t('common.edit'), edit_admin_ticket_path(ticket)
+        td
+          = link_to t('common.destroy'), ticket, method: :delete, data: { confirm: 'Are you sure?' }
+div
+  = link_to 'Новый билет', new_admin_ticket_path
+  |  |
+  = link_to 'Home', admin_welcome_index_path

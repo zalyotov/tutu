@@ -1,0 +1,6 @@
+h1
+  | Создание вагона для поезда #
+  =@train.number
+
+= render 'form', wagon: @wagon
+= link_to 'Назад', admin_train_path(@train)

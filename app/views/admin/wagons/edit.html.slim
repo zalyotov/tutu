@@ -1,0 +1,6 @@
+h1
+  | Редактирование вагона
+= render 'form', wagon: @wagon
+= link_to 'Назад', admin_wagon_path(@wagon)
+|  | 
+= link_to 'Список вагонов', admin_train_wagons_path(@wagon.train)

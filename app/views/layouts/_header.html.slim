@@ -1,0 +1,18 @@
+div.auth
+  -if user_signed_in?
+    p
+      =current_user.email
+      |  | 
+      =link_to "Мои билеты", tickets_path
+      |  | 
+      =link_to "Выйти", destroy_user_session_path, method: :delete
+      -if current_user.admin?
+        |  | 
+        =link_to "Администрирование", admin_welcome_index_path
+  -else
+    =link_to "Войти", new_user_session_path
+
+p#notice.notice
+  = notice
+p.alert
+  = alert

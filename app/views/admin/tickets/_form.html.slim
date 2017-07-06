@@ -1,0 +1,46 @@
+.row
+  .col-lg-12
+    = form_for [:admin, @ticket], class: 'form-group' do |f|
+      - if @ticket.errors.any?
+        #error_explanation
+          h2
+            = pluralize(@ticket.errors.count, "error")
+            |  prohibited this ticket from being saved:
+          ul
+            - @ticket.errors.full_messages.each do |message|
+              li
+                = message
+      .row
+        .col-lg-4
+          .field
+            = f.label :user_id, 'Пользователь:'
+            = f.collection_select :user_id, User.all, :id, :email
+      .row
+        .col-lg-4
+          .field
+            = f.label :train_id, 'Поезд:'
+            = f.collection_select :train_id, Train.all, :id, :number
+      .row
+        .col-lg-4
+          .field
+            = f.label :first_station_id, 'Начальная станция:'
+            = f.collection_select :first_station_id, RailwayStation.all, :id, :title
+      .row
+        .col-lg-4
+          .field
+            = f.label :last_station_id, 'Конечная станция:'
+            = f.collection_select :last_station_id, RailwayStation.all, :id, :title
+      .row
+        .col-lg-4
+          .field
+            = f.label :owner_name, 'ФИО'
+            = f.text_field :owner_name
+      .row
+        .col-lg-4
+          .field
+            = f.label :passport_number, 'Номер паспорта'
+            = f.text_field :passport_number
+      .row
+        .col-lg-4
+          .actions
+            = f.submit 'Оформить'
