@@ -1,5 +1,5 @@
 class TicketsController < ApplicationController
-  before_action :authenticate_user!, only: [:create]
+  before_action :authenticate_user!, only: [:create, :new, :index]
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
   
   def index
@@ -35,7 +35,7 @@ class TicketsController < ApplicationController
   def show    
   end
 
-  def edit    
+  def edit
   end
 
   private
@@ -45,6 +45,6 @@ class TicketsController < ApplicationController
   end
 
   def set_ticket
-    @ticket = Ticket.find(params[:id])
+    @ticket = current_user.tickets.find(params[:id])
   end
 end
