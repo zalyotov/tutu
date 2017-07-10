@@ -1,0 +1,13 @@
+p#notice
+  = notice
+h1
+  | Вагоны
+table
+  tbody
+    - if @wagons.present?
+      = render partial: 'admin/wagons/wagon', collection: @wagons
+    - else
+      | Вагонов нет
+      
+br
+= link_to 'Создать вагон', new_admin_train_wagon_path

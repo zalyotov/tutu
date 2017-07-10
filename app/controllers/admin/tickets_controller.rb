@@ -1,19 +1,21 @@
-class TicketsController < ApplicationController
-  before_action :authenticate_user!, only: [:create]
+class Admin::TicketsController < Admin::BaseController
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
   
-  def index
-    @tickets = current_user.tickets.all
+  def new
+    @ticket = Ticket.new
   end
 
-  def new
-    @ticket = current_user.tickets.new
+  def index
+    @tickets = Ticket.all
+  end
+
+  def edit
   end
 
   def create
-    @ticket = current_user.tickets.new(ticket_params)
+    @ticket = Ticket.new(ticket_params)
     if @ticket.save
-      redirect_to @ticket, notice: 'Ticket was successfully created.'
+      redirect_to admin_ticket_path(@ticket), notice: 'Ticket was successfully created.'
     else
       render :new
     end
@@ -21,7 +23,7 @@ class TicketsController < ApplicationController
 
   def update
     if @ticket.update(ticket_params)
-      redirect_to @ticket, notice: 'Ticket was successfully updated.'
+      redirect_to admin_ticket_path(@ticket), notice: 'Ticket was successfully updated.'
     else
       render :edit
     end
@@ -29,13 +31,10 @@ class TicketsController < ApplicationController
 
   def destroy
     @ticket.destroy
-    redirect_to tickets_url, notice: 'Ticket was successfully destroyed.'
+    redirect_to admin_tickets_path, notice: 'Ticket was successfully destroyed.'
   end
 
   def show    
-  end
-
-  def edit    
   end
 
   private

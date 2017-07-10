@@ -1,0 +1,24 @@
+= form_for [:admin, train] do |form|
+  - if train.errors.any?
+    #error_explanation
+      h2
+        = pluralize(train.errors.count, "error")
+        |  prohibited this train from being saved:
+      ul
+        - train.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = form.label :number
+    = form.text_field :number, id: :train_number
+
+  .field
+    = form.label :route
+    = form.collection_select :route_id, Route.all, :id, :title, {:prompt => 'Выберите маршрут'}
+
+  .field
+    = form.label "Обратная сортировка вагонов?"
+    = form.check_box(:wagons_sort)
+
+  .actions
+    = form.submit
