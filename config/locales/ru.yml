@@ -1,0 +1,34 @@
+ru:
+  common:
+    back: 'Назад'
+    show: 'Показать'
+    edit: 'Редактировать'
+    destroy: 'Удалить'
+    errors: 'При заполнении формы возникли ошибки'
+    station_list: "Список станций"
+  admin:
+    railway_stations:
+      new:
+        title: "Новая станция"
+      index:
+        title: "Станция"
+      form:
+        submit: "%{action} станцию"
+    tickets:
+      form:
+        submit: "%{action} билет"
+    trains:
+      index:
+        trains: 'Поезда'
+        number: 'Номер'
+        train: "Создать поезд"
+      form:
+        submit: "%{action} поезд"
+  searches:
+    show:
+      from: "Со станции"
+      to: "На станцию"
+  tickets:
+    form:
+      passport_number: 'Номер паспорта'
+      owner_name: 'ФИО'

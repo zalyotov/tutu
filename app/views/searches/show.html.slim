@@ -1,21 +1,18 @@
--if current_user
-  | Привет, #{current_user.first_name}
-
-
 .page-header
   h1 Поиск поезда
 
 .row
-  = form_tag(search_path) do
-    div
-      = label :first_station_id, 'Со станции'
-      = collection_select :stations, :first_station_id, RailwayStation.all, :id, :title, {prompt: 'Выберите станцию', required: true}
-    div  
-    = label :last_station_id, 'На станцию'
-    = collection_select :stations, :last_station_id, RailwayStation.all, :id, :title, {prompt: 'Выберите станцию', required: true}
-    br
-    br
-    = submit_tag 'Поиск поездов'
+  .col-md-12
+    = form_tag(search_path) do
+      .row
+        .col-md-5.form-group
+          = label :first_station_id, t(".from")
+          = collection_select :stations, :first_station_id, RailwayStation.all, :id, :title, {prompt: 'Выберите станцию', required: true}, {class: 'form-control'}
+        .col-md-5.form-group
+          = label :last_station_id, t(".to")
+          = collection_select :stations, :last_station_id, RailwayStation.all, :id, :title, {prompt: 'Выберите станцию', required: true}, {class: 'form-control'}
+        .col-md-2.form-group
+          = submit_tag 'Поиск поездов', class: 'btn btn-success btn-md button-search find'
 br
 
 div
@@ -23,7 +20,7 @@ div
     | Маршруты не найдены
     br
   -else
-    table
+    table.table
       thead
         tr
           td Номер поезда
@@ -38,4 +35,4 @@ div
             td =train.route.title
             td =@first_station.departure_time_in(train.route)
             td =@last_station.arrival_time_in(train.route)
-            td =link_to 'Купить билет', new_ticket_path(train_id: train.id, first_station_id: @first_station.id, last_station_id: @last_station.id)
+            td =link_to 'Купить билет', new_ticket_path(train_id: train.id, first_station_id: @first_station.id, last_station_id: @last_station.id), class: 'btn btn-danger btn-xs', role: 'button'

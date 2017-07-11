@@ -6,17 +6,16 @@ p
   = @route.title
 
 p
-  strong
-    | Список станций на маршруте: 
+  | Список станций на маршруте: 
   - if @route.railway_stations.present?
-    table
+    table.table
       thead
         tr
-          td width=200
+          th width=200
             | Название
-          td
+          th
             | Позиция
-          td
+          th
             | Прибытие/Отправление
 
       - @route.railway_stations.ordered.each do |station|

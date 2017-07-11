@@ -30,8 +30,9 @@ class Admin::TicketsController < Admin::BaseController
   end
 
   def destroy
-    @ticket.destroy
-    redirect_to admin_tickets_path, notice: 'Ticket was successfully destroyed.'
+    if @ticket.destroy
+      redirect_to admin_tickets_path, notice: 'Ticket was successfully destroyed.'
+    end
   end
 
   def show    

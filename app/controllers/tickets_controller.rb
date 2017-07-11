@@ -28,8 +28,9 @@ class TicketsController < ApplicationController
   end
 
   def destroy
-    @ticket.destroy
-    redirect_to tickets_url, notice: 'Ticket was successfully destroyed.'
+    if @ticket.destroy
+      redirect_to tickets_url, notice: 'Ticket was successfully destroyed.'
+    end
   end
 
   def show    

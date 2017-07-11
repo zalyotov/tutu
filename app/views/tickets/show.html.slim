@@ -1,23 +1,21 @@
-p#notice
-  = notice
 h1
   | Билет
-table
+table.table
   thead
     tr
-      td Поезд
-      td ФИО
-      td Данные паспорта
-      td Станция отправления
-      td Станция прибытия
+      th Поезд
+      th ФИО
+      th Данные паспорта
+      th Станция отправления
+      th Станция прибытия
   tbody
-  tr
-    td = @ticket.train.number
-    td = @ticket.owner_name
-    td = @ticket.passport_number
-    td = @ticket.first_station.title
-    td = @ticket.last_station.title
-br
+    tr
+      td = @ticket.train.number
+      td = @ticket.owner_name
+      td = @ticket.passport_number
+      td = @ticket.first_station.title
+      td = @ticket.last_station.title
+
 
 = link_to 'Редактировать', edit_ticket_path(@ticket)
 |  | 

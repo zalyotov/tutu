@@ -2,6 +2,6 @@ p
   strong
     | Название:
   = @railway_station.title
-= link_to 'Редактировать', edit_admin_railway_station_path(@railway_station)
+= link_to t("common.back"), edit_admin_railway_station_path(@railway_station)
 |  | 
-= link_to 'Список станций', admin_railway_stations_path
+= link_to t("common.station_list"), admin_railway_stations_path

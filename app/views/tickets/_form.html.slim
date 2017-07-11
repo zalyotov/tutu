@@ -1,21 +1,15 @@
 = form_for(@ticket) do |f|
   - if ticket.errors.any?
-    #error_explanation
-      h2
-        = pluralize(ticket.errors.count, "error")
-        |  prohibited this ticket from being saved:
-      ul
-        - ticket.errors.full_messages.each do |message|
-          li
-            = message
-  .field
-    = f.label :owner_name, 'ФИО'
-    = f.text_field :owner_name
-  .field
-    = f.label :passport_number, 'Номер паспорта'
-    = f.text_field :passport_number
-    = f.hidden_field :train_id, value: params[:train_id]
-    = f.hidden_field :first_station_id, value: params[:first_station_id]
-    = f.hidden_field :last_station_id, value: params[:last_station_id]
-  .actions
-  = f.submit 'Оформить'
+    =render 'common/error', resource: ticket
+  .row
+    .col-md-5.form-group
+      = f.label :owner_name, class: 'sr-only'
+      = f.text_field :owner_name, {class: 'form-control', placeholder: t('.owner_name')}
+    .col-md-5.form-group
+      = f.label :passport_number, class: 'sr-only'
+      = f.text_field :passport_number, {class: 'form-control', placeholder: t('.passport_number')}
+      = f.hidden_field :train_id, value: params[:train_id]
+      = f.hidden_field :first_station_id, value: params[:first_station_id]
+      = f.hidden_field :last_station_id, value: params[:last_station_id]
+    .col-md-2.form-group
+      = f.submit 'Оформить', class: 'btn btn-warning btn-md', role: 'button'
