@@ -1,13 +1,7 @@
 = form_for [:admin, route] do |form|
   - if route.errors.any?
-    #error_explanation
-      h2
-        = pluralize(route.errors.count, "error")
-        |  prohibited this route from being saved:
-      ul
-        - route.errors.full_messages.each do |message|
-          li
-            = message
+    =render 'common/error', resource: route
+
   .field
     = form.label :title, "Название маршрута"
     = form.text_field :title, id: :route_title

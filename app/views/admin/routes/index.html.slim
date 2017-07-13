@@ -2,7 +2,7 @@ p#notice
   = notice
 h1
   | Маршруты
-table
+table.table
   thead
     tr
       th
@@ -20,4 +20,4 @@ table
         td
           = link_to 'Удалить', admin_route_path(route), method: :delete, data: { confirm: 'Вы уверены?' }
 br
-= link_to 'Создать маршрут', new_admin_route_path
+= link_to 'Создать маршрут', new_admin_route_path, class: 'btn btn-success btn-md', role: 'button'

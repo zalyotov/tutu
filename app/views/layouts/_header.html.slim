@@ -1,18 +1,23 @@
-div.auth
-  -if user_signed_in?
-    p
-      =current_user.email
-      |  | 
-      =link_to "Мои билеты", tickets_path
-      |  | 
-      =link_to "Выйти", destroy_user_session_path, method: :delete
-      -if current_user.admin?
-        |  | 
-        =link_to "Администрирование", admin_welcome_index_path
-  -else
-    =link_to "Войти", new_user_session_path
-
-p#notice.notice
-  = notice
-p.alert
-  = alert
+header.header
+  .navbar.navbar-default.navbar-static-top
+    .container
+      button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      .row
+        .col-md-6
+          a.navbar-brand href="/"Tutu
+          .navbar-collapse.collapse.navbar-responsive-collapse
+            ul.nav.navbar-nav
+              -if user_signed_in?
+                li.= link_to "Мои билеты", tickets_path
+                -if current_user.admin?
+                  li.dropdown
+                    =link_to "Администрирование", admin_welcome_index_path
+                li= link_to "Выйти (#{current_user.email})", destroy_user_session_path, method: :delete
+              -else
+                li= link_to "Войти", new_user_session_path
+        .col-md-6
+          -if current_user
+            p.hello= "Привет, #{current_user.first_name}!"

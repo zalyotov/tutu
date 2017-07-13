@@ -1,13 +1,7 @@
 = form_for [:admin, train] do |form|
   - if train.errors.any?
-    #error_explanation
-      h2
-        = pluralize(train.errors.count, "error")
-        |  prohibited this train from being saved:
-      ul
-        - train.errors.full_messages.each do |message|
-          li
-            = message
+    =render 'common/error', resource: train
+
   .field
     = form.label :number
     = form.text_field :number, id: :train_number
@@ -21,4 +15,4 @@
     = form.check_box(:wagons_sort)
 
   .actions
-    = form.submit
+    = form.submit t(".submit", action: @train.new_record? ? "Создать" : "Изменить")

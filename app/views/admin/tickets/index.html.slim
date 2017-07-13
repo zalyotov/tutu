@@ -1,7 +1,7 @@
 
 h1 Билеты
 
-table
+table.table
   thead
     tr
       th
@@ -36,8 +36,6 @@ table
         td
           = link_to t('common.edit'), edit_admin_ticket_path(ticket)
         td
-          = link_to t('common.destroy'), ticket, method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to t('common.destroy'), [:admin, ticket], method: :delete, data: { confirm: 'Are you sure?' }
 div
-  = link_to 'Новый билет', new_admin_ticket_path
-  |  |
-  = link_to 'Home', admin_welcome_index_path
+  = link_to 'Новый билет', new_admin_ticket_path, class: 'btn btn-success btn-md', role: 'button'
