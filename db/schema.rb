@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170713175308) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "railway_stations", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
@@ -37,11 +40,11 @@ ActiveRecord::Schema.define(version: 20170713175308) do
     t.integer "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "first_station_id"
-    t.integer "last_station_id"
-    t.integer "train_id"
-    t.integer "route_id"
-    t.integer "user_id"
+    t.bigint "first_station_id"
+    t.bigint "last_station_id"
+    t.bigint "train_id"
+    t.bigint "route_id"
+    t.bigint "user_id"
     t.string "owner_name"
     t.string "passport_number"
     t.index ["first_station_id"], name: "index_tickets_on_first_station_id"
@@ -55,8 +58,8 @@ ActiveRecord::Schema.define(version: 20170713175308) do
     t.string "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "current_station_id"
-    t.integer "route_id"
+    t.bigint "current_station_id"
+    t.bigint "route_id"
     t.boolean "wagons_sort"
     t.index ["current_station_id"], name: "index_trains_on_current_station_id"
     t.index ["route_id"], name: "index_trains_on_route_id"
@@ -84,7 +87,7 @@ ActiveRecord::Schema.define(version: 20170713175308) do
   create_table "wagons", force: :cascade do |t|
     t.integer "up_places"
     t.integer "down_places"
-    t.integer "train_id"
+    t.bigint "train_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "type"
