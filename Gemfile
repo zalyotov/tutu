@@ -36,6 +36,7 @@ gem 'devise'
 gem 'therubyracer'
 gem 'jquery-rails'
 gem 'rails_12factor'
+gem 'bootstrap_helper'
 
 
 # Use Capistrano for deployment
