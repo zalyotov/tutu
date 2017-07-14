@@ -37,6 +37,7 @@ gem 'therubyracer'
 gem 'jquery-rails'
 gem 'rails_12factor'
 gem 'twitter-bootstrap-rails'
+gem 'sendgrid-ruby'
 
 
 # Use Capistrano for deployment
