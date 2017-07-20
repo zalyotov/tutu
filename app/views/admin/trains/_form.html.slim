@@ -1,4 +1,4 @@
-= form_for [:admin, train] do |form|
+= form_for [:admin, train], html: {id: "edit-train-#{train.id}", class: 'form-group', style: "display: #{hidden ? 'none' : 'block'}"} do |form|
   - if train.errors.any?
     =render 'common/error', resource: train
 
@@ -15,4 +15,4 @@
     = form.check_box(:wagons_sort)
 
   .actions
-    = form.submit t(".submit", action: @train.new_record? ? "Создать" : "Изменить")
+    = form.submit t(".submit", action: train.new_record? ? "Создать" : "Изменить")
