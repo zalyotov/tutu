@@ -11,29 +11,29 @@
 
   .field
     = form.label :type, "Тип вагона"
-    = form.select :type, Wagon::TYPE.invert, {:prompt => 'Выберите тип вагона'}
+    = form.select :type, Wagon::TYPE.invert, {:prompt => 'Выберите тип вагона'}, class: 'wagon-select'
 
-  .field
+  .text-field.hidden
     = form.label :up_places, "Верхние места"
     = form.text_field :up_places
 
-  .field
+  .text-field.hidden
     = form.label :down_places, "Нижние места"
     = form.text_field :down_places
 
-  .field
+  .text-field.hidden
     = form.label :side_up_places, "Верхние боковые места"
     = form.text_field :side_up_places
 
-  .field
+  .text-field.hidden
     = form.label :side_down_places, "Нижние боковые места"
     = form.text_field :side_down_places
 
-  .field
+  .text-field.hidden
     = form.label :places, "Спальные места"
     = form.text_field :places
 
-  .field
+  .text-field.hidden
     = form.label :seat_places, "Сидячие места"
     = form.text_field :seat_places
 
