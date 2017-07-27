@@ -1,0 +1,67 @@
+* [31m41eb37b[m -[33m (HEAD -> lesson_21)[m Реализовано инлайн редактирование маршрутов и изменение полей при выборе типа вагона [32m(59 seconds ago)[1;34m<Evgeny Zaletov>[m
+[31m|[m * [31mdfd053c[m -[33m (tutu/lesson_21)[m Выполнено 21-е задание [32m(3 minutes ago)[1;34m<Evgeny Zaletov>[m
+[31m|[m[31m/[m  
+*   [31m2fcd6da[m -[33m (tutu/master, master)[m Merge pull request #7 from zalyotov/lesson_20 [32m(4 hours ago)[1;34m<zalyotov>[m
+[33m|[m[34m\[m  
+[33m|[m * [31m9aee968[m -[33m (tutu/lesson_20, lesson_20)[m Добавлен SendGrid [32m(6 days ago)[1;34m<Evgeny Zaletov>[m
+[33m|[m * [31me1d7697[m -[33m[m fix for deploy [32m(6 days ago)[1;34m<Evgeny Zaletov>[m
+[33m|[m * [31m666bc2c[m -[33m[m fix for deploy [32m(6 days ago)[1;34m<Evgeny Zaletov>[m
+[33m|[m * [31mdb74102[m -[33m[m fix for deploy [32m(6 days ago)[1;34m<Evgeny Zaletov>[m
+[33m|[m * [31me6cee84[m -[33m[m fix for deploy [32m(6 days ago)[1;34m<Evgeny Zaletov>[m
+[33m|[m * [31m42f24cd[m -[33m[m fix for deploy [32m(6 days ago)[1;34m<Evgeny Zaletov>[m
+[33m|[m * [31mf0844d9[m -[33m (lesson_19)[m fix for deploy [32m(7 days ago)[1;34m<Evgeny Zaletov>[m
+[33m|[m * [31mba952cd[m -[33m[m fix for deploy [32m(7 days ago)[1;34m<Evgeny Zaletov>[m
+[33m|[m * [31m3cc3866[m -[33m[m Установлен gem pg [32m(7 days ago)[1;34m<Evgeny Zaletov>[m
+[33m|[m * [31m3c4a265[m -[33m[m Реализована отправка писем при покупке и отмене покупки билета [32m(7 days ago)[1;34m<Evgeny Zaletov>[m
+[33m|[m * [31m8e92791[m -[33m[m Добавлены недостающие индексы [32m(7 days ago)[1;34m<Evgeny Zaletov>[m
+[33m|[m[33m/[m  
+*   [31m6f1e03a[m -[33m[m Merge pull request #6 from zalyotov/lesson_19 [32m(7 days ago)[1;34m<zalyotov>[m
+[35m|[m[36m\[m  
+[35m|[m * [31m8c17179[m -[33m (tutu/lesson_19)[m Удален непонятный файл :) [32m(9 days ago)[1;34m<Evgeny Zaletov>[m
+[35m|[m * [31m8107b1f[m -[33m[m Выполнено 19 задание [32m(9 days ago)[1;34m<Evgeny Zaletov>[m
+* [36m|[m   [31m64e38a7[m -[33m[m Merge pull request #4 from zalyotov/lesson_18 [32m(10 days ago)[1;34m<zalyotov>[m
+[1;31m|[m[36m\[m [36m\[m  
+[1;31m|[m [36m|[m[36m/[m  
+[1;31m|[m * [31mc7a6dd6[m -[33m (tutu/lesson_18, lesson_18)[m Исправлены замечания [32m(13 days ago)[1;34m<Evgeny Zaletov>[m
+* [1;32m|[m   [31m77c4759[m -[33m[m Merge pull request #5 from zalyotov/lesson_17 [32m(10 days ago)[1;34m<zalyotov>[m
+[1;33m|[m[1;32m\[m [1;32m\[m  
+[1;33m|[m [1;32m|[m[1;32m/[m  
+[1;33m|[m * [31m1d92f1e[m -[33m (tutu/lesson_17, lesson_17)[m Выполнено 18 задание [32m(2 weeks ago)[1;34m<Evgeny Zaletov>[m
+[1;33m|[m[1;33m/[m  
+*   [31md5c67b4[m -[33m[m Merge pull request #3 from zalyotov/lesson_17 [32m(2 weeks ago)[1;34m<zalyotov>[m
+[1;35m|[m[1;36m\[m  
+[1;35m|[m * [31mea94e31[m -[33m[m Добавлен функционал поиска и оформления билета [32m(2 weeks ago)[1;34m<Evgeny Zaletov>[m
+[1;35m|[m * [31m9d3c8eb[m -[33m[m Реализовано время прибытия/убытия со станции в маршруте [32m(2 weeks ago)[1;34m<Evgeny Zaletov>[m
+[1;35m|[m * [31m300aadf[m -[33m[m Реализованы вагоны вложенным ресурсом [32m(2 weeks ago)[1;34m<Evgeny Zaletov>[m
+[1;35m|[m * [31mf0a1a84[m -[33m[m Реализована сортировка станций в маршруте [32m(2 weeks ago)[1;34m<Evgeny Zaletov>[m
+[1;35m|[m[1;35m/[m  
+* [31mdc9cea1[m -[33m[m Fix scope in RailwayStation module [32m(6 weeks ago)[1;34m<Evgeny Zaletov>[m
+*   [31mb1772ae[m -[33m[m Merge pull request #2 from zalyotov/ActiveRecord [32m(6 weeks ago)[1;34m<zalyotov>[m
+[31m|[m[32m\[m  
+[31m|[m * [31m0919ed8[m -[33m (tutu/ActiveRecord, ActiveRecord)[m fix bug [32m(6 weeks ago)[1;34m<Evgeny Zaletov>[m
+[31m|[m * [31mb61d2d0[m -[33m[m Выполнено 16 задание [32m(6 weeks ago)[1;34m<Evgeny Zaletov>[m
+[31m|[m * [31mb26ef79[m -[33m[m Сделана валидация номера вагона у поезда [32m(6 weeks ago)[1;34m<Evgeny Zaletov>[m
+[31m|[m * [31m85dbf06[m -[33m[m реализован STI [32m(6 weeks ago)[1;34m<Evgeny Zaletov>[m
+[31m|[m *   [31m04c5dca[m -[33m[m Merge branch 'master' into ActiveRecord [32m(6 weeks ago)[1;34m<Evgeny Zaletov>[m
+[31m|[m [33m|[m[31m\[m  
+[31m|[m [33m|[m[31m/[m  
+[31m|[m[31m/[m[33m|[m   
+* [33m|[m   [31m86b98e1[m -[33m[m Merge pull request #1 from zalyotov/wagons [32m(9 weeks ago)[1;34m<zalyotov>[m
+[35m|[m[36m\[m [33m\[m  
+[35m|[m * [33m|[m [31m589874c[m -[33m (tutu/wagons, wagons)[m Выполнено 15 задание [32m(9 weeks ago)[1;34m<Evgeny Zaletov>[m
+[35m|[m[35m/[m [33m/[m  
+[35m|[m * [31mc6f83ca[m -[33m[m Добавлен порядковый номер станции, список станций в маршруте выводится в соответствии с сортировкой [32m(6 weeks ago)[1;34m<Evgeny Zaletov>[m
+[35m|[m[35m/[m  
+* [31m674be28[m -[33m[m Выполнено задание #14 [32m(9 weeks ago)[1;34m<Evgeny Zaletov>[m
+* [31m11917d7[m -[33m[m Переведены все вьюхи на русский язык [32m(9 weeks ago)[1;34m<Evgeny Zaletov>[m
+* [31md03a0b8[m -[33m[m Убрана валидация связанных объектов [32m(9 weeks ago)[1;34m<Evgeny Zaletov>[m
+* [31mb3569a2[m -[33m[m Подчищены контроллеры [32m(9 weeks ago)[1;34m<Evgeny Zaletov>[m
+* [31m51a7143[m -[33m[m Добавлена главная страница [32m(9 weeks ago)[1;34m<Evgeny Zaletov>[m
+* [31m1467a42[m -[33m[m Добавлен футер [32m(9 weeks ago)[1;34m<Evgeny Zaletov>[m
+* [31mb0ed7a5[m -[33m[m Установлен Slim [32m(9 weeks ago)[1;34m<Evgeny Zaletov>[m
+* [31m8a7a470[m -[33m[m Исправлены замечания в задании #13 [32m(10 weeks ago)[1;34m<Evgeny Zaletov>[m
+* [31m62ce3ee[m -[33m[m Выполнено задание #13 [32m(10 weeks ago)[1;34m<Evgeny Zaletov>[m
+* [31m9ecc89c[m -[33m[m Добавлена валидация для ресурса Routes [32m(10 weeks ago)[1;34m<Evgeny Zaletov>[m
+* [31m7ffa8d4[m -[33m[m Создан ресурс Routes с CRUD-операциями [32m(10 weeks ago)[1;34m<Evgeny Zaletov>[m
+* [31meb5972f[m -[33m[m Созданы ресурсы RailwayStation и Train [32m(2 months ago)[1;34m<Evgeny Zaletov>[m
+* [31m6bb50fc[m -[33m[m Initial commit [32m(2 months ago)[1;34m<Evgeny Zaletov>[m
